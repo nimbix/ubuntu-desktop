@@ -5,14 +5,14 @@ MAINTAINER Nimbix, Inc.
 ARG SERIAL_NUMBER
 ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20180124.1405}
 
-ARG IMAGE_COMMON_BRANCH
-ENV IMAGE_COMMON_BRANCH ${IMAGE_COMMON_BRANCH:-master}
+ARG GIT_BRANCH
+ENV GIT_BRANCH ${GIT_BRANCH:-master}
 
 RUN apt-get -y update && \
     apt-get -y install curl && \
     curl -H 'Cache-Control: no-cache' \
         https://raw.githubusercontent.com/nimbix/image-common/$GIT_BRANCH/install-nimbix.sh \
-        | bash -s -- --setup-nimbix-desktop --image-common-branch $IMAGE_COMMON_BRANCH
+        | bash -s -- --setup-nimbix-desktop --image-common-branch $GIT_BRANCH
 
 ADD help.html /etc/NAE/help.html
 ADD AppDef.json /etc/NAE/AppDef.json
