@@ -1,5 +1,5 @@
 FROM ubuntu:xenial
-MAINTAINER Nimbix, Inc.
+LABEL maintainer="Nimbix, Inc."
 
 # Update SERIAL_NUMBER to force rebuild of all layers (don't use cached layers)
 ARG SERIAL_NUMBER
@@ -14,8 +14,9 @@ RUN apt-get -y update && \
         https://raw.githubusercontent.com/nimbix/image-common/$GIT_BRANCH/install-nimbix.sh \
         | bash -s -- --setup-nimbix-desktop --image-common-branch $GIT_BRANCH
 
-ADD help.html /etc/NAE/help.html
-ADD AppDef.json /etc/NAE/AppDef.json
+COPY NAE/screenshot.png /etc/NAE/screenshot.png
+COPY NAE/AppDef.json /etc/NAE/AppDef.json
+RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://api.jarvice.com/jarvice/validate
 
 # Expose port 22 for local JARVICE emulation in docker
 EXPOSE 22
