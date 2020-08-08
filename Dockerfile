@@ -3,10 +3,10 @@ LABEL maintainer="Nimbix, Inc."
 
 # Update SERIAL_NUMBER to force rebuild of all layers (don't use cached layers)
 ARG SERIAL_NUMBER
-ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20180124.1405}
+ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20200808.1405}
 
 ARG GIT_BRANCH
-ENV GIT_BRANCH ${GIT_BRANCH:-master}
+ENV GIT_BRANCH ${GIT_BRANCH:-vnc-options-test}
 
 RUN apt-get -y update && \
     apt-get -y install curl && \
