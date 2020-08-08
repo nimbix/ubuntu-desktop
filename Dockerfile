@@ -1,15 +1,15 @@
-FROM ubuntu:xenial
+FROM ubuntu:focal
 LABEL maintainer="Nimbix, Inc."
 
 # Update SERIAL_NUMBER to force rebuild of all layers (don't use cached layers)
 ARG SERIAL_NUMBER
-ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20180124.1405}
+ENV SERIAL_NUMBER ${SERIAL_NUMBER:-20200629.2200}
 
 ARG GIT_BRANCH
 ENV GIT_BRANCH ${GIT_BRANCH:-master}
 
 RUN apt-get -y update && \
-    apt-get -y install curl && \
+    DEBIAN_FRONTEND=noninteractive apt-get -y install curl && \
     curl -H 'Cache-Control: no-cache' \
         https://raw.githubusercontent.com/nimbix/image-common/$GIT_BRANCH/install-nimbix.sh \
         | bash -s -- --setup-nimbix-desktop --image-common-branch $GIT_BRANCH
