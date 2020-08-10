@@ -16,6 +16,8 @@ RUN apt-get -y update && \
 
 COPY NAE/screenshot.png /etc/NAE/screenshot.png
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
+COPY NAE/help.html /etc/NAE/help.html
+
 RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://api.jarvice.com/jarvice/validate
 
 # Expose port 22 for local JARVICE emulation in docker
