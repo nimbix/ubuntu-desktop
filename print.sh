@@ -20,9 +20,9 @@ while (( "$#" >= 1 )); do
       APIURL=$VAL
     else
       echo -n \"${KEY}\"\: \"${VAL}\"
+      (( "$#" > 0 )) && echo -n ","
     fi
-    
-    (( "$#" > 0 )) && echo -n ","
+
   else
     shift
   fi
