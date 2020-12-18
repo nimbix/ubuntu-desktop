@@ -1,5 +1,5 @@
 {
-    "name": "Ubuntu Linux for Intel",
+    "name": "Ubuntu Linux for ARM",
     "description": "Ubuntu Linux for Intel",
     "author": "Nimbix, Inc.",
     "licensed": true,
@@ -7,7 +7,7 @@
         "Software Development"
     ],
     "machines": [
-        "*"
+        "na*"
     ],
     "vault-types": [
         "FILE"
