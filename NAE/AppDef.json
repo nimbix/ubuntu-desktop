@@ -223,7 +223,7 @@
         "UPLOAD": {
           "name": "upload",
           "description": "UPLOAD",
-          "required": true,
+          "required": false,
           "type": "UPLOAD",
           "target": "/tmp/test.json",
           "filter": ".json",
