@@ -10,15 +10,12 @@
     "*"
   ],
   "vault-types": [
-    "FILE",
-    "BLOCK",
-    "BLOCK_ARRAY",
-    "OBJECT"
+    "FILE"
   ],
   "commands": {
     "TEST": {
       "path": "/bin/print.sh",
-      "interactive": true,
+      "interactive": false,
       "name": "PARAMTEST",
       "description": "Prints all commands passed in",
       "parameters": {
