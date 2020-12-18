@@ -218,7 +218,7 @@
           "type": "FILE",
           "filter": "*.sh|*.txt",
           "positional": true,
-          "required": true
+          "required": false
         },
         "UPLOAD": {
           "name": "upload",
