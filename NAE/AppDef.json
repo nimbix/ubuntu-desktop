@@ -1,5 +1,5 @@
 {
-  "name": "JARVICE task builder param tester",
+  "name": "Jarvice Task Builder Tester",
   "description": "Tests task builder and job params handling",
   "author": "Nimbix, Inc.",
   "licensed": false,
@@ -180,7 +180,7 @@
           "name": "-testSTR",
           "description": "STR",
           "type": "STR",
-          "value": "",
+          "value": "bar",
           "positional": false,
           "required": true
         },
