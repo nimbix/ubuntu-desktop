@@ -7,7 +7,9 @@
     "Software Development"
   ],
   "machines": [
-    "*"
+    "n0",
+    "n00",
+    "n000"
   ],
   "vault-types": [
     "FILE"
@@ -24,7 +26,7 @@
           "description": "CONST",
           "type": "CONST",
           "value": "Hello World",
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "MACHINETYPE": {
@@ -32,7 +34,7 @@
           "description": "MACHINETYPE",
           "type": "CONST",
           "value": "%MACHINETYPE%",
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "APIURL": {
@@ -40,7 +42,7 @@
           "description": "APIURL",
           "type": "CONST",
           "value": "%APIURL%",
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "APIUSER": {
@@ -48,7 +50,7 @@
           "description": "APIUSER",
           "type": "CONST",
           "value": "%APIUSER%",
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "APIKEY": {
@@ -56,7 +58,7 @@
           "description": "APIKEY",
           "type": "CONST",
           "value": "%APIKEY%",
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "CORES": {
@@ -64,7 +66,7 @@
           "description": "CORES",
           "type": "CONST",
           "value": "%CORES%",
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "GPUS": {
@@ -72,7 +74,7 @@
           "description": "GPUS",
           "type": "CONST",
           "value": "%GPUS%",
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "SGPUS": {
@@ -80,7 +82,7 @@
           "description": "SGPUS",
           "type": "CONST",
           "value": "%SGPUS%",
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "RAM": {
@@ -88,7 +90,7 @@
           "description": "RAM",
           "type": "CONST",
           "value": "%RAM%",
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "SRAM": {
@@ -96,7 +98,7 @@
           "description": "SRAM",
           "type": "CONST",
           "value": "%SRAM%",
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "NODES": {
@@ -104,7 +106,7 @@
           "description": "NODES",
           "type": "CONST",
           "value": "%NODES%",
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "TCORES": {
@@ -112,7 +114,7 @@
           "description": "TCORES",
           "type": "CONST",
           "value": "%TCORES%",
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "TGPUS": {
@@ -120,7 +122,7 @@
           "description": "TGPUS",
           "type": "CONST",
           "value": "%TGPUS%",
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "TRAM": {
@@ -128,7 +130,7 @@
           "description": "TRAM",
           "type": "CONST",
           "value": "%TRAM%",
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "JOBLABEL": {
@@ -136,7 +138,7 @@
           "description": "JOBLABEL",
           "type": "CONST",
           "value": "%JOBLABEL%",
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "VTYPE": {
@@ -144,7 +146,7 @@
           "description": "VTYPE",
           "type": "CONST",
           "value": "%VTYPE%",
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "VNAME": {
@@ -152,7 +154,7 @@
           "description": "VNAME",
           "type": "CONST",
           "value": "%VNAME%",
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "testFLOAT": {
@@ -163,7 +165,7 @@
           "min": 1,
           "max": 1000.5,
           "precision": 2,
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "BOOL": {
@@ -171,7 +173,7 @@
           "description": "BOOL",
           "type": "BOOL",
           "value": true,
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "STR": {
@@ -179,7 +181,7 @@
           "description": "STRs",
           "type": "STR",
           "value": "-c",
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "INT": {
@@ -189,7 +191,7 @@
           "value": 10,
           "min": 10,
           "max": 100,
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "SELECTION": {
@@ -206,7 +208,7 @@
             "b",
             "c"
           ],
-          "positional": true,
+          "positional": false,
           "required": true
         },
         "FILE": {
@@ -214,7 +216,7 @@
           "description": "FILE",
           "type": "FILE",
           "filter": "*.sh|*.txt",
-          "positional": true,
+          "positional": false,
           "required": false
         },
         "UPLOAD": {
