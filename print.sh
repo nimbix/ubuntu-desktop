@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -n "{"
+echo -n "{\"a07e70cb-898b-4ada-9506-91e062e6641c\":{"
 while (( "$#" >= 1 )); do
   if [[ $1 == \-* ]] ;
   then
@@ -19,4 +19,4 @@ while (( "$#" >= 1 )); do
     shift
   fi
 done
-echo "}"
+echo "}}"

@@ -15,7 +15,7 @@
     "FILE"
   ],
   "commands": {
-    "TEST": {
+    "PARAMTEST": {
       "path": "/bin/print.sh",
       "interactive": false,
       "name": "PARAMTEST",
@@ -161,7 +161,7 @@
           "name": "-testFloat",
           "description": "FLOAT",
           "type": "FLOAT",
-          "value": 3.14159,
+          "value": 1.0,
           "min": 1,
           "max": 1000.5,
           "precision": 2,
@@ -172,7 +172,7 @@
           "name": "-testBOOL",
           "description": "BOOL",
           "type": "BOOL",
-          "value": true,
+          "value": false,
           "positional": false,
           "required": true
         },
@@ -180,7 +180,7 @@
           "name": "-testSTR",
           "description": "STR",
           "type": "STR",
-          "value": "foo",
+          "value": "",
           "positional": false,
           "required": true
         },
