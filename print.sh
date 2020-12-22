@@ -17,7 +17,8 @@ while (( "$#" >= 1 )); do
     # Test if the API URL works (gets "OK" if it is good)
     if [[ $KEY == '-APIURL' ]]
     then
-      echo -n "\"APIURLTEST\":\"$(curl --fail --silent ${VAL} | jq -r .status)\","
+      [[ "${VAL}" != */ ]] && VAL="${VAL}/"
+      echo -n "\"APIURLTEST\":\"$(curl --fail --silent ${VAL}live | tr -d ' \n{":}')\","
     fi
 
     echo -n \"${KEY}\"\: \"${VAL}\"
