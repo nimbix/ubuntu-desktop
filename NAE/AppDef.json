@@ -157,6 +157,7 @@
           "positional": false,
           "required": true
         },
+
         "-testFLOAT": {
           "name": "-testFloat",
           "description": "FLOAT",
@@ -168,6 +169,7 @@
           "positional": false,
           "required": true
         },
+
         "-testBOOL": {
           "name": "-testBOOL",
           "description": "BOOL",
@@ -176,6 +178,7 @@
           "positional": false,
           "required": true
         },
+
         "-testSTR": {
           "name": "-testSTR",
           "description": "STR",
@@ -184,6 +187,7 @@
           "positional": false,
           "required": true
         },
+
         "-testINT": {
           "name": "-testINT",
           "description": "INT",
@@ -194,6 +198,7 @@
           "positional": false,
           "required": true
         },
+
         "-testSELECTION": {
           "name": "-testSelection",
           "description": "SELECTION",
@@ -211,6 +216,7 @@
           "positional": false,
           "required": true
         },
+
         "-testFILE": {
           "name": "-testFILE",
           "description": "FILE",

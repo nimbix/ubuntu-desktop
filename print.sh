@@ -13,10 +13,18 @@ while (( "$#" >= 1 )); do
       VAL=$2
       shift 2
     fi
+
+    # Test if the API URL works (gets "OK" if it is good)
+    if [[ $KEY == '-APIURL' ]]
+    then
+      echo -n "\"APIURLTEST\":\"$(curl --fail --silent ${VAL} | jq -r .status)\","
+    fi
+
     echo -n \"${KEY}\"\: \"${VAL}\"
     (( "$#" > 0 )) && echo -n ","
   else
     shift
   fi
 done
+
 echo "}}"
