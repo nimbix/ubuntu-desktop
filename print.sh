@@ -15,9 +15,13 @@ while (( "$#" >= 1 )); do
     fi
 
     # Save API URL if any
-    [[ $KEY == '-APIURL' ]] && APIURL=$VAL
-
-    echo -n \"${KEY}\"\: \"${VAL}\"
+    if [[ $KEY == '-APIURL' ]]
+    then
+      APIURL=$VAL
+    else
+      echo -n \"${KEY}\"\: \"${VAL}\"
+    fi
+    
     (( "$#" > 0 )) && echo -n ","
   else
     shift
@@ -29,8 +33,8 @@ echo "}}"
 if [[ -n ${APIURL} ]]
 then
   [[ "${APIURL}" != */ ]] && APIURL="${APIURL}/"
-  echo ${APIURL}live
-  curl  ${APIURL}live
+  echo ${APIURL}
+  curl --fail --silent ${APIURL}jarvice/live | tr -d " \n"
   echo
 fi
 
