@@ -14,12 +14,8 @@ while (( "$#" >= 1 )); do
       shift 2
     fi
 
-    # Test if the API URL works (gets "OK" if it is good)
-    if [[ $KEY == '-APIURL' ]]
-    then
-      [[ "${VAL}" != */ ]] && VAL="${VAL}/"
-      echo -n "\"APIURLTEST\":\"$(curl --fail --silent ${VAL}live | tr -d ' \n{":}')\","
-    fi
+    # Save API URL if any
+    [[ $KEY == '-APIURL' ]] && APIURL=$VAL
 
     echo -n \"${KEY}\"\: \"${VAL}\"
     (( "$#" > 0 )) && echo -n ","
@@ -27,5 +23,13 @@ while (( "$#" >= 1 )); do
     shift
   fi
 done
-
 echo "}}"
+
+# Test if the API URL works (gets {"status":"OK"} if it is good)
+if [[ -n ${APIURL} ]]
+then
+  [[ "${APIURL}" != */ ]] && APIURL="${APIURL}/"
+  curl --fail --silent ${APIURL}live | tr -d " \n"
+  echo
+fi
+
