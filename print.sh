@@ -29,6 +29,7 @@ echo "}}"
 if [[ -n ${APIURL} ]]
 then
   [[ "${APIURL}" != */ ]] && APIURL="${APIURL}/"
+  echo ${APIURL}live
   curl --fail --silent ${APIURL}live | tr -d " \n"
   echo
 fi
