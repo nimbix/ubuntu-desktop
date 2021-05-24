@@ -159,7 +159,7 @@
         },
 
         "-testFLOAT": {
-          "name": "-testFloat",
+          "name": "-testFLOAT",
           "description": "FLOAT",
           "type": "FLOAT",
           "value": 1.0,
@@ -200,7 +200,7 @@
         },
 
         "-testSELECTION": {
-          "name": "-testSelection",
+          "name": "-testSELECTION",
           "description": "SELECTION",
           "type": "selection",
           "values": [
@@ -221,7 +221,7 @@
           "name": "-testFILE",
           "description": "FILE",
           "type": "FILE",
-          "filter": "*.sh|*.txt",
+          "filter": "*.*",
           "positional": false,
           "required": false
         },
