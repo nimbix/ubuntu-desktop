@@ -1,15 +1,13 @@
 {
-  "name": "Jarvice Task Builder Tester",
+  "name": "Cypress Task Builder Tester",
   "description": "Tests task builder and job params handling",
   "author": "Nimbix, Inc.",
   "licensed": false,
   "classifications": [
-    "Software Development"
+    "Cypress"
   ],
   "machines": [
-    "n0",
-    "n00",
-    "n000"
+    "*"
   ],
   "vault-types": [
     "FILE"
@@ -157,19 +155,17 @@
           "positional": false,
           "required": true
         },
-
         "-testFLOAT": {
           "name": "-testFLOAT",
           "description": "FLOAT",
           "type": "FLOAT",
-          "value": 1.0,
+          "value": 1,
           "min": 1,
           "max": 1000.5,
           "precision": 2,
           "positional": false,
           "required": true
         },
-
         "-testBOOL": {
           "name": "-testBOOL",
           "description": "BOOL",
@@ -178,7 +174,6 @@
           "positional": false,
           "required": true
         },
-
         "-testSTR": {
           "name": "-testSTR",
           "description": "STR",
@@ -187,7 +182,6 @@
           "positional": false,
           "required": true
         },
-
         "-testINT": {
           "name": "-testINT",
           "description": "INT",
@@ -198,7 +192,6 @@
           "positional": false,
           "required": true
         },
-
         "-testSELECTION": {
           "name": "-testSELECTION",
           "description": "SELECTION",
@@ -216,12 +209,11 @@
           "positional": false,
           "required": true
         },
-
         "-testFILE": {
           "name": "-testFILE",
           "description": "FILE",
           "type": "FILE",
-          "filter": "*.*",
+          "filter": "*.sh|*.txt",
           "positional": false,
           "required": false
         },
