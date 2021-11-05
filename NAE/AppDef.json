@@ -1,10 +1,10 @@
 {
-  "name": "Cypress Task Builder Tester",
-  "description": "Tests task builder and job params handling",
+  "name": "Nimbix License Queue Tester",
+  "description": "License queueing test helper",
   "author": "Nimbix, Inc.",
   "licensed": false,
   "classifications": [
-    "Cypress"
+    "Test"
   ],
   "machines": [
     "*"
@@ -13,52 +13,12 @@
     "FILE"
   ],
   "commands": {
-    "PARAMTEST": {
-      "path": "/bin/print.sh",
+    "Run": {
+      "path": "/bin/start.sh",
       "interactive": false,
-      "name": "PARAMTEST",
-      "description": "Prints all commands passed in",
+      "name": "Run",
+      "description": "Test License Reserver",
       "parameters": {
-        "-CONST": {
-          "name": "-CONST",
-          "description": "CONST",
-          "type": "CONST",
-          "value": "Hello World",
-          "positional": false,
-          "required": true
-        },
-        "-MACHINETYPE": {
-          "name": "-MACHINETYPE",
-          "description": "MACHINETYPE",
-          "type": "CONST",
-          "value": "%MACHINETYPE%",
-          "positional": false,
-          "required": true
-        },
-        "-APIURL": {
-          "name": "-APIURL",
-          "description": "APIURL",
-          "type": "CONST",
-          "value": "%APIURL%",
-          "positional": false,
-          "required": true
-        },
-        "-APIUSER": {
-          "name": "-APIUSER",
-          "description": "APIUSER",
-          "type": "CONST",
-          "value": "%APIUSER%",
-          "positional": false,
-          "required": true
-        },
-        "-APIKEY": {
-          "name": "-APIKEY",
-          "description": "APIKEY",
-          "type": "CONST",
-          "value": "%APIKEY%",
-          "positional": false,
-          "required": true
-        },
         "-CORES": {
           "name": "CORES",
           "description": "CORES",
@@ -67,164 +27,13 @@
           "positional": false,
           "required": true
         },
-        "-GPUS": {
-          "name": "-GPUS",
-          "description": "GPUS",
-          "type": "CONST",
-          "value": "%GPUS%",
-          "positional": false,
-          "required": true
-        },
-        "-SGPUS": {
-          "name": "-SGPUS",
-          "description": "SGPUS",
-          "type": "CONST",
-          "value": "%SGPUS%",
-          "positional": false,
-          "required": true
-        },
-        "-RAM": {
-          "name": "-RAM",
-          "description": "RAM",
-          "type": "CONST",
-          "value": "%RAM%",
-          "positional": false,
-          "required": true
-        },
-        "-SRAM": {
-          "name": "-SRAM",
-          "description": "SRAM",
-          "type": "CONST",
-          "value": "%SRAM%",
-          "positional": false,
-          "required": true
-        },
-        "-NODES": {
-          "name": "-NODES",
-          "description": "NODES",
-          "type": "CONST",
-          "value": "%NODES%",
-          "positional": false,
-          "required": true
-        },
-        "-TCORES": {
-          "name": "-TCORES",
-          "description": "TCORES",
-          "type": "CONST",
-          "value": "%TCORES%",
-          "positional": false,
-          "required": true
-        },
-        "-TGPUS": {
-          "name": "-TGPUS",
-          "description": "TGPUS",
-          "type": "CONST",
-          "value": "%TGPUS%",
-          "positional": false,
-          "required": true
-        },
-        "-TRAM": {
-          "name": "-TRAM",
-          "description": "TRAM",
-          "type": "CONST",
-          "value": "%TRAM%",
-          "positional": false,
-          "required": true
-        },
-        "-JOBLABEL": {
-          "name": "-JOBLABEL",
-          "description": "JOBLABEL",
-          "type": "CONST",
-          "value": "%JOBLABEL%",
-          "positional": false,
-          "required": true
-        },
-        "-VTYPE": {
-          "name": "-VTYPE",
-          "description": "VTYPE",
-          "type": "CONST",
-          "value": "%VTYPE%",
-          "positional": false,
-          "required": true
-        },
-        "-VNAME": {
-          "name": "-VNAME",
-          "description": "VNAME",
-          "type": "CONST",
-          "value": "%VNAME%",
-          "positional": false,
-          "required": true
-        },
-        "-testFLOAT": {
-          "name": "-testFLOAT",
-          "description": "FLOAT",
-          "type": "FLOAT",
-          "value": 1,
-          "min": 1,
-          "max": 1000.5,
-          "precision": 2,
-          "positional": false,
-          "required": true
-        },
-        "-testBOOL": {
-          "name": "-testBOOL",
-          "description": "BOOL",
-          "type": "BOOL",
-          "value": false,
-          "positional": false,
-          "required": true
-        },
-        "-testSTR": {
-          "name": "-testSTR",
-          "description": "STR",
+        "-s": {
+          "name": "-s",
+          "description": "License Server Address",
           "type": "STR",
-          "value": "bar",
+          "value": 1,
           "positional": false,
           "required": true
-        },
-        "-testINT": {
-          "name": "-testINT",
-          "description": "INT",
-          "type": "INT",
-          "value": 10,
-          "min": 10,
-          "max": 100,
-          "positional": false,
-          "required": true
-        },
-        "-testSELECTION": {
-          "name": "-testSELECTION",
-          "description": "SELECTION",
-          "type": "selection",
-          "values": [
-            "one",
-            "two",
-            "three"
-          ],
-          "mvalues": [
-            "a",
-            "b",
-            "c"
-          ],
-          "positional": false,
-          "required": true
-        },
-        "-testFILE": {
-          "name": "-testFILE",
-          "description": "FILE",
-          "type": "FILE",
-          "filter": "*.sh|*.txt",
-          "positional": false,
-          "required": false
-        },
-        "-testUPLOAD": {
-          "name": "-testUPLOAD",
-          "description": "UPLOAD",
-          "required": false,
-          "type": "UPLOAD",
-          "target": "/data/test.json",
-          "filter": ".json",
-          "size": 1024
         }
       }
     }
