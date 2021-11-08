@@ -19,7 +19,7 @@
       "name": "Batch",
       "description": "Run test.",
       "parameters": {
-        "-CORES": {
+        "-c": {
           "name": "CORES",
           "description": "CORES",
           "type": "CONST",
@@ -27,8 +27,16 @@
           "positional": false,
           "required": true
         },
+        "-t": {
+          "name": "TOKEN",
+          "description": "License token name",
+          "type": "CONST",
+          "value": "%JOB_LABEL%",
+          "positional": false,
+          "required": true
+        },
         "-s": {
-          "name": "-s",
+          "name": "SERVER",
           "description": "License Server Address",
           "type": "STR",
           "value": "10.128.0.18",
