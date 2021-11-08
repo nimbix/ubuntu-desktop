@@ -14,7 +14,7 @@
   ],
   "commands": {
     "Batch": {
-      "path": "/bin/bash -c /start.sh",
+      "path": "/app/start.sh",
       "interactive": false,
       "name": "Batch",
       "description": "Run test.",
