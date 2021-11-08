@@ -17,7 +17,9 @@ RUN apt-get -y update && \
 COPY NAE/screenshot.png /etc/NAE/screenshot.png
 COPY NAE/AppDef.json /etc/NAE/AppDef.json
 COPY NAE/help.html /etc/NAE/help.html
-COPY ./start.sh /
+
+WORKDIR app
+COPY ./start.sh /app/
 
 # Expose port 22 for local JARVICE emulation in docker
 EXPOSE 22
