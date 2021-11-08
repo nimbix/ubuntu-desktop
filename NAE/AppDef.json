@@ -13,10 +13,10 @@
     "FILE"
   ],
   "commands": {
-    "Run": {
+    "server": {
       "path": "/bin/start.sh",
       "interactive": false,
-      "name": "Run",
+      "name": "server",
       "description": "Test License Reserver",
       "parameters": {
         "-CORES": {
