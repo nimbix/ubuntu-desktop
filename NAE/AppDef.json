@@ -1,10 +1,10 @@
 {
-  "name": "Nimbix License Queue Tester",
-  "description": "License queueing test helper",
+  "name": "Ubuntu Linux for Intel",
+  "description": "Ubuntu Linux for Intel",
   "author": "Nimbix, Inc.",
-  "licensed": false,
+  "licensed": true,
   "classifications": [
-    "Test"
+    "Software Development"
   ],
   "machines": [
     "*"
@@ -13,11 +13,11 @@
     "FILE"
   ],
   "commands": {
-    "server": {
-      "path": "/bin/start.sh",
+    "Batch": {
+      "path": "/bin/bash -c /start.sh",
       "interactive": false,
-      "name": "server",
-      "description": "Test License Reserver",
+      "name": "Batch",
+      "description": "Run test.",
       "parameters": {
         "-CORES": {
           "name": "CORES",
