@@ -31,7 +31,7 @@
           "name": "-s",
           "description": "License Server Address",
           "type": "STR",
-          "value": 1,
+          "value": "10.128.0.18",
           "positional": false,
           "required": true
         }
