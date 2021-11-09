@@ -1,2 +1,2 @@
-# ubuntu-desktop
-Ubuntu Desktop (graphical) base Docker image for JARVICE
+# license-test
+License tester client app

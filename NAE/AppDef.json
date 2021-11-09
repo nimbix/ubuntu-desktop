@@ -42,6 +42,14 @@
           "value": "10.128.0.18",
           "positional": false,
           "required": true
+        },
+        "-d": {
+          "name": "DELAY",
+          "description": "Keepalive delay",
+          "type": "INT",
+          "value": "10",
+          "positional": false,
+          "required": true
         }
       }
     }
