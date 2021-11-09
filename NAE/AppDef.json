@@ -31,7 +31,7 @@
           "name": "TOKEN",
           "description": "License token name",
           "type": "CONST",
-          "value": "%JOB_LABEL%",
+          "value": "%JOBLABEL%",
           "positional": false,
           "required": true
         },
