@@ -47,7 +47,7 @@
           "name": "DELAY",
           "description": "Keepalive delay",
           "type": "INT",
-          "value": "10",
+          "value": 10,
           "positional": false,
           "required": true
         }
