@@ -48,6 +48,8 @@
           "description": "Keepalive delay",
           "type": "INT",
           "value": 10,
+          "min": 5,
+          "max": 60,
           "positional": false,
           "required": true
         }
