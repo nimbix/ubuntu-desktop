@@ -34,7 +34,7 @@ echo
 
 while true
 do
-  echo -e -n $(date "+%T") "Reserving ${CORES} ${TOKEN} for ${JOB_NAME} on ${SERVER} \t\t\t"
+  echo -e -n $(date "+%T") "Reserving ${CORES} ${TOKEN} \t\t\t"
   curl --silent $URL
   sleep ${DELAY}
 done
