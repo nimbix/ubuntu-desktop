@@ -39,7 +39,7 @@
           "name": "SERVER",
           "description": "License Server Address",
           "type": "STR",
-          "value": "10.128.0.18",
+          "value": "10.128.0.18:9090",
           "positional": false,
           "required": true
         },
