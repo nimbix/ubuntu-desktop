@@ -23,7 +23,7 @@
           "name": "CORES",
           "description": "CORES",
           "type": "CONST",
-          "value": "%CORES%",
+          "value": "%TCORES%",
           "positional": false,
           "required": true
         },
