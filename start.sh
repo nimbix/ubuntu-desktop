@@ -40,8 +40,8 @@ echo
 while true
 do
   echo -e -n $(date "+%T") "Reserving ${CORES} ${TOKEN} \t\t\t"
-  curl -k --silent $URL | grep 'Insufficient instances of token'
-  [[ "$?" != "0" ]] && [[ -n "$EXIT" ]] && exit -1
+  curl -k --silent $URL | grep 'Insufficient instances of token' 
+  [[ "$?" == "0" ]] && [[ -n "$EXIT" ]] && echo "Exiting..." && exit -1
   sleep ${DELAY}
 done
 
