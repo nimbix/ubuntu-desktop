@@ -1,7 +1,7 @@
 #!/bin/bash
 echo $*
 
-while getopts ":s:c:t:d:" o; do
+while getopts ":s:c:t:d:x:" o; do
     case "${o}" in
         s)
             SERVER=${OPTARG}
@@ -15,6 +15,9 @@ while getopts ":s:c:t:d:" o; do
         d)
             DELAY=${OPTARG}
             ;;
+        x)
+            EXIT=${OPTARG}
+            ;;
         *)
             echo Invalid args
             ;;
@@ -27,6 +30,8 @@ echo "SERVER = ${SERVER}"
 echo "CORES = ${CORES}"
 echo "TOKEN = ${TOKEN}"
 echo "DELAY = ${DELAY}"
+echo "EXIT = ${EXIT}"
+
 
 URL="http://${SERVER}/checkout?token=${TOKEN}&id=${JOB_NAME}&count=${CORES}"
 echo Request URL is ${URL}
@@ -35,7 +40,8 @@ echo
 while true
 do
   echo -e -n $(date "+%T") "Reserving ${CORES} ${TOKEN} \t\t\t"
-  curl --silent $URL
+  curl --fail-with-body -k --silent $URL
+  [[ "$?" != "0" ]] && [[ -n "$EXIT" ]] && exit -1
   sleep ${DELAY}
 done
 
