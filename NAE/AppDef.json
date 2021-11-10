@@ -56,6 +56,7 @@
         "-x": {
           "name": "Exit on reservation fail",
           "type": "BOOL",
+          "value": false,
           "positional": false,
           "required": true
         }
