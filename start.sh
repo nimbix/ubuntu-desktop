@@ -40,7 +40,7 @@ echo
 while true
 do
   echo -e -n $(date "+%T") "Reserving ${CORES} ${TOKEN} \t\t\t"
-  curl --fail-with-body -k --silent $URL
+  curl -k --silent $URL | grep 'Insufficient instances of token'
   [[ "$?" != "0" ]] && [[ -n "$EXIT" ]] && exit -1
   sleep ${DELAY}
 done
