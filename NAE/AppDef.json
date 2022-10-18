@@ -3,6 +3,7 @@
     "description": "Ubuntu Linux for Intel",
     "author": "Nimbix, Inc.",
     "licensed": true,
+    "appdefversion": 2,
     "classifications": [
         "Software Development"
     ],
@@ -44,19 +45,36 @@
                 }
             }
         },
-        "Server": {
-            "path": "/sbin/init",
-            "interactive": true,
-            "name": "Server",
-            "description": "Launch a session with all boot services, including SSH (if installed).  Connection address and credentials will appear in your web browser once available.",
-            "parameters": {}
-        },
         "GUI": {
-            "path": "/usr/local/bin/nimbix_desktop",
-            "interactive": true,
+            "path": "/usr/bin/xfce4-terminal",
+            "desktop": true,
             "name": "GUI",
             "description": "Run a GUI command, and connect interactively directly from your web browser (requires Nimbix Desktop in image)",
             "parameters": {
+                "--minimize": {
+                    "name": "--minimize",
+                    "description": "--minimize",
+                    "type": "CONST",
+                    "value": "--minimize",
+                    "positional": true,
+                    "required": true
+                },
+                "--hold": {
+                    "name": "--hold",
+                    "description": "--hold",
+                    "type": "CONST",
+                    "value": "--hold",
+                    "positional": true,
+                    "required": true
+                },
+                "--execute": {
+                    "name": "--execute",
+                    "description": "--execute",
+                    "type": "CONST",
+                    "value": "--execute",
+                    "positional": true,
+                    "required": true
+                }, 
                 "command": {
                     "name": "Command",
                     "description": "Command to run",
