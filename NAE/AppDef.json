@@ -15,7 +15,7 @@
     "commands": {
         "Batch": {
             "path": "/bin/bash",
-            "interactive": false,
+            "interactive": true,
             "name": "Batch",
             "description": "Run a batch command using /bin/bash.  The output may be monitored directly in your web browser.",
             "parameters": {
@@ -38,7 +38,8 @@
                 "command": {
                     "name": "Command",
                     "description": "Command to run",
-                    "type": "STR",
+                    "type": "CONST",
+                    "value": "/bin/sleep 1d",
                     "positional": true,
                     "required": true
                 }
