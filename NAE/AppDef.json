@@ -1,8 +1,8 @@
 {
-    "name": "Ubuntu Linux for Intel",
-    "description": "Ubuntu Linux for Intel",
+    "name": "Nextflow Helper",
+    "description": "Nextflow control node",
     "author": "Nimbix, Inc.",
-    "licensed": true,
+    "licensed": false,
     "classifications": [
         "Software Development"
     ],
@@ -13,37 +13,6 @@
         "FILE"
     ],
     "commands": {
-        "Batch": {
-            "path": "/bin/bash",
-            "interactive": false,
-            "name": "Batch",
-            "description": "Run a batch command using /bin/bash.  The output may be monitored directly in your web browser.",
-            "parameters": {
-                "-l": {
-                    "name": "-l",
-                    "description": "-l",
-                    "type": "CONST",
-                    "value": "-l",
-                    "positional": true,
-                    "required": true
-                },
-                "-c": {
-                    "name": "-c",
-                    "description": "-c",
-                    "type": "CONST",
-                    "value": "-c",
-                    "positional": true,
-                    "required": true
-                },
-                "command": {
-                    "name": "Command",
-                    "description": "Command to run",
-                    "type": "STR",
-                    "positional": true,
-                    "required": true
-                }
-            }
-        },
         "Server": {
             "path": "/sbin/init",
             "interactive": true,
@@ -51,24 +20,9 @@
             "description": "Launch a session with all boot services, including SSH (if installed).  Connection address and credentials will appear in your web browser once available.",
             "parameters": {}
         },
-        "GUI": {
-            "path": "/usr/local/bin/nimbix_desktop",
-            "interactive": true,
-            "name": "GUI",
-            "description": "Run a GUI command, and connect interactively directly from your web browser (requires Nimbix Desktop in image)",
-            "parameters": {
-                "command": {
-                    "name": "Command",
-                    "description": "Command to run",
-                    "type": "STR",
-                    "positional": true,
-                    "required": true
-                }
-            }
-        }
     },
     "image": {
-        "type": "image/svg+xml",
-        "data": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNTAwIiBoZWlnaHQ9IjI0OTAiIHZpZXdCb3g9IjExLjgxMSAxMi43MyAyNzUuNjg5IDI3NC41MzkiPjxlbGxpcHNlIGN4PSI0MC4xNTgiIGN5PSIxNTAuMDIyIiByeD0iMjguMzQ3IiByeT0iMjYuNTIiIGZpbGw9IiNmZjYzMDkiLz48ZWxsaXBzZSBjeD0iMjM4LjQ3OSIgY3k9IjI2MC43NDciIHJ4PSIyOC4zNDciIHJ5PSIyNi41MjEiIGZpbGw9IiNmZmI1MTUiLz48cGF0aCBkPSJNMTcyLjM2OSA4My44MjRjMzQuNDM5IDAgNjMuMDE0IDI0LjczNSA2Ny43NDUgNTYuODAzSDI4Ny41Yy0yLjE1Mi0yNS4xOTgtMTIuOTUzLTQ4LjY4NC0zMS4wMS02Ny4yMDctMTEuNTY1IDUuNjk3LTI1Ljc4NSA1LjgwNi0zNy44NjUtLjkzOC0xMi4wODktNi43NTItMTkuMTA0LTE4LjcyNy0xOS43NzYtMzEuMjc2YTEyMC4yMjkgMTIwLjIyOSAwIDAgMC0yNi40NzktMi45MzhjLTE3LjI5IDAtMzMuOTk4IDMuNjUxLTQ5LjE5NSAxMC41NzNsMjMuNzIzIDM5Ljc0NWE3MC4wODcgNzAuMDg3IDAgMCAxIDI1LjQ3MS00Ljc2MnoiIGZpbGw9IiNmZjYzMDkiLz48cGF0aCBkPSJNMjQwLjExNyAxNTkuMzg3Yy00LjcyIDMyLjA4LTMzLjI5OSA1Ni44My02Ny43NDggNTYuODMtOS4wMDIgMC0xNy42MDItMS42OTQtMjUuNDgtNC43NjhsLTIzLjcyNyAzOS43NDhjMTUuMTkzIDYuOTI2IDMxLjkwOCAxMC41NzkgNDkuMjA1IDEwLjU3OSA5LjAzNSAwIDE3LjkxNC0xLjAwOSAyNi41LTIuOTQ0LjY2LTEyLjU2MyA3LjY3OC0yNC41NTkgMTkuNzc1LTMxLjMxNCAxMi4wODQtNi43NSAyNi4zMS02LjY0MSAzNy44NzctLjkzMiAxOC4wNDMtMTguNTI1IDI4LjgzMi00Mi4wMSAzMC45NzgtNjcuMTk5aC00Ny4zOHoiIGZpbGw9IiNjOTAwMTYiLz48cGF0aCBkPSJNMTAzLjkzNCAxNTAuMDIxYzAtMjEuMDkgMTAuMjQ5LTM5LjkwNiAyNi4xNzktNTIuMDM2bC0yMy43MTctMzkuNzM5YTExNi40MDcgMTE2LjQwNyAwIDAgMC0xNS43MjcgMTIuNzUyQzc2Ljk0MyA4NC4yNzQgNjcuMSAxMDAuMzA1IDYxLjY4MyAxMTcuOGMxMC45MTMgNi44MzggMTguMTM5IDE4LjcwNyAxOC4xMzkgMzIuMjIxIDAgMTMuNTEyLTcuMjI3IDI1LjM4NC0xOC4xNCAzMi4yMTkgNS40MTcgMTcuNDk2IDE1LjI2IDMzLjUyNSAyOC45ODYgNDYuODAzYTExNi40MzMgMTE2LjQzMyAwIDAgMCAxNS43MTQgMTIuNzQ4bDIzLjcyMS0zOS43NDJjLTE1LjkyNi0xMi4xMjktMjYuMTY5LTMwLjk0NS0yNi4xNjktNTIuMDI4eiIgZmlsbD0iI2ZmYjUxNSIvPjxlbGxpcHNlIGN4PSIyMzguNDU2IiBjeT0iMzkuMjUyIiByeD0iMjguMzQ2IiByeT0iMjYuNTIyIiBmaWxsPSIjYzkwMDE2Ii8+PC9zdmc+"
+        "type": "",
+        "data": ""
     }
 }
