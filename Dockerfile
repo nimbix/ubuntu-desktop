@@ -19,6 +19,7 @@ COPY NAE/AppDef.json /etc/NAE/AppDef.json
 RUN curl --fail -X POST -d @/etc/NAE/AppDef.json https://cloud.nimbix.net/api/jarvice/validate
 
 COPY NAE/help.html /etc/NAE/help.html
+COPY NAE/swlicense.txt /etc/NAE/swlicense.txt
 
 # Expose port 22 for local JARVICE emulation in docker
 EXPOSE 22
