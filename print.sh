@@ -1,5 +1,11 @@
 #!/bin/bash
 
+extdata=""
+while IFS= read -r line; do
+  extdata+="${line}&"
+done < /etc/JARVICE/jobextdata.sh
+extdata=${extdata%&}
+
 echo -n "{\"a07e70cb-898b-4ada-9506-91e062e6641c\":{"
 while (( "$#" >= 1 )); do
   if [[ $1 == \-* ]] ;
@@ -27,7 +33,7 @@ while (( "$#" >= 1 )); do
     shift
   fi
 done
-echo "}}"
+echo ",\"-EXTDATA\": \"$extdata\"}}"
 
 # Test if the API URL works (gets {"status":"OK"} if it is good)
 if [[ -n ${APIURL} ]]
